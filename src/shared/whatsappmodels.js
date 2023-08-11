@@ -1,6 +1,6 @@
 const cart = [];
 
-function MessageMainMenu(number){
+function MessageMainMenu(text, number){
     const data = JSON.stringify({
         "messaging_product": "whatsapp",
         "to": number,
@@ -8,29 +8,29 @@ function MessageMainMenu(number){
         "interactive": {
             "type": "button",
             "body": {
-                "text": "¡Hola y bienvenido(a)!, soy Jessy 👩‍🚀 el bot asistente de 🪐 *Pizza Planeta* 🪐 y estoy aquí para ayudarte en ésta magnífica experiencia."
+                "text": text
             },
             "action": {
                 "buttons": [
                     {
                         "type": "reply",
                         "reply": {
-                            "id": "option-menu",
-                            "title": "Ver el menú"
+                            "id": "option-1",
+                            "title": "Servicios"
                         }
                     },
                     {
                         "type": "reply",
                         "reply": {
-                            "id": "option-pedido",
-                            "title": "Realizar pedido"
+                            "id": "option-2",
+                            "title": "Sitio web"
                         }
                     },
                     {
                         "type": "reply",
                         "reply": {
-                            "id": "option-contacto",
-                            "title": "Contácto tel."
+                            "id": "option-3",
+                            "title": "Contacto directo"
                         }
                     }
                 ]
@@ -61,26 +61,26 @@ function MessageContact(number){
             {
                 "addresses": [
                     {
-                        "street": "Av. Mirador #55",
-                        "city": "Tlalmanalco",
-                        "state": "Estado de México",
-                        "zip": "56700",
-                        "country": "México",
+                        "street": "",
+                        "city": "",
+                        "state": "",
+                        "zip": "",
+                        "country": "",
                         "country_code": "+52",
-                        "type": "WORK"
+                        "type": ""
                     }
                 ],
                 "birthday": "",
                 "emails": [
                     {
-                        "email": "pizza.planeta@gmail.com",
-                        "type": "WORK"
+                        "email": "info@busit.com",
+                        "type": ""
                     }
                 ],
                 "name": {
-                    "formatted_name": "Pizza Planeta",
-                    "first_name": "Buzz",
-                    "last_name": "Lightyear",
+                    "formatted_name": "Bus iT",
+                    "first_name": "",
+                    "last_name": "",
                     "middle_name": "",
                     "suffix": "",
                     "prefix": ""
@@ -94,13 +94,13 @@ function MessageContact(number){
                     {
                         "phone": "555555555",
                         "wa_id": "5255555555",
-                        "type": "WORK"
+                        "type": ""
                     }
                 ],
                 "urls": [
                     {
-                        "url": "",
-                        "type": "WORK"
+                        "url": "https://www.busit.net",
+                        "type": ""
                     }
                 ]
             }
@@ -160,7 +160,7 @@ function MessageValidation() {
     return data;
 }
 
-function MessageOrderStart(number){
+function MessageServiceMenu(number){
     const data = JSON.stringify({
         "messaging_product": "whatsapp",
         "to": number,
@@ -169,19 +169,54 @@ function MessageOrderStart(number){
             "type": "button",
             "header": {
                 "type":"text",
-                "text": "Menú de alimentos"
+                "text": "Servicios"
             },
             "body": {
-                "text": "Escoje la pizza de tu preferencia"
+                "text": "Escoje los servicios que deseés informes"
             },
             "action": {
-                "buttons": [
+                "sections": [
                     {
-                        "type": "reply",
-                        "reply": {
-                            "id": "option-simple",
-                            "title": "Pizzas Sencillas"
-                        }
+                        "title": "Software",
+                        "rows": [
+                            {
+                                "id": "opt-1",
+                                "title": "Chatbot"
+                            },
+                            {
+                                "id": "opt-2",
+                                "title": "Chatbot con IA"
+                            },
+                            {
+                                "id": "opt-3",
+                                "title": "Página web"
+                            },
+                            {
+                                "id": "opt-4",
+                                "title": "Web App"
+                            },
+                            {
+                                "id": "opt-5",
+                                "title": "Tótems"
+                            },
+                            {
+                                "id": "opt-6",
+                                "title": "VR"
+                            },
+                        ]
+                    },
+                    {
+                        "title": "Hardware",
+                        "rows": [
+                            {
+                                "id": "opt-1",
+                                "title": "Videovigilancia"
+                            },
+                            {
+                                "id": "opt-2",
+                                "title": "Redes"
+                            },
+                        ]
                     }
                 ]
             }
@@ -639,7 +674,7 @@ MessageOptionsDelivery,
 MessageImage,
 GetMessageLocation,
 MessageValidation,
-MessageOrderStart,
+MessageServiceMenu,
 MessageLocationConfirmation,
 MessagePizzaOneIngredientSecond,
 MessagePizzaOneIngredient2,

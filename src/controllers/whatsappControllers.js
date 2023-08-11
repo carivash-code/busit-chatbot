@@ -66,19 +66,22 @@ function GetTime(messages) {
 function GetTextUser(messages){
     let text = "";
     let typeMessge = messages["type"];
+    console.log('messages', typeMessge)
 
     if(typeMessge == "text"){
         const time = GetTime(messages);
 
         const horaApertura = new Date();
-        horaApertura.setHours(11, 0, 0); // Añadirle 1 hora mas del horario normal
+        horaApertura.setHours(10, 0, 0); // Añadirle 1 hora mas del horario normal
 
         const horaCierre  = new Date();
-        horaCierre .setHours(22, 30, 0); // Añadirle 1 hora mas del horario normal
+        horaCierre .setHours(23, 0, 0); // Añadirle 1 hora mas del horario normal
 
         const horaAperturaLocal = horaApertura.toLocaleTimeString('en-GB');
         const horaCierreLocal = horaCierre.toLocaleTimeString('en-GB');
 
+        console.log('its closed', time < horaAperturaLocal || time >= horaCierreLocal)
+        console.log('time', time , horaAperturaLocal , horaCierreLocal)
         if( time < horaAperturaLocal || time >= horaCierreLocal ) {
            text = 'Out of service ' + time;
         } else {
