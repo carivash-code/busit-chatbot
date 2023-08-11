@@ -3,6 +3,7 @@ const whatsappService = require("../services/whatsappService");
 const chatGPTService =  require("../services/chatpgt-service")
 
 async function Process(textUser, number){
+    console.log('textUser', textUser)
     textUser = typeof textUser == 'string' ? textUser.toLowerCase() : textUser;
     let models = [];
     const cart = [];

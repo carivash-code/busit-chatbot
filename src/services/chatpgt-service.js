@@ -8,7 +8,7 @@ async function GetMessageChatGPT(message) {
     const response = await openai.createCompletion({
       model: "davinci:ft-bus-it:clara-2023-08-11-04-38-25",
       prompt: message,
-      max_tokens: 150,
+      max_tokens: 100,
       temperature: 1,
       stop: "END"
     });
