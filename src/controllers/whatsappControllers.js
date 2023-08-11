@@ -21,7 +21,7 @@ const VerifyToken = (req, res) => {
     }
 }
 
-const ReceivedMessage = (req, res) => {
+async function ReceivedMessage(req, res) {
     try{
         let entry = (req.body["entry"])[0];
         let changes = (entry["changes"])[0];
@@ -36,7 +36,7 @@ const ReceivedMessage = (req, res) => {
             let text = GetTextUser(messages);
             
             if(text != ""){
-                processMessage.Process(text, number);
+                await processMessage.Process(text, number);
             } 
 
         }        
