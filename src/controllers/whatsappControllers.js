@@ -56,37 +56,15 @@ async function GetLocation(messages) {
     });
 }
 
-function GetTime(messages) {
-    const date = new Date(messages.timestamp * 1000);
-    const enUS = date.toLocaleTimeString('en-GB', { timeZone: 'CST'});
-
-    return enUS
-}
 
 function GetTextUser(messages){
     let text = "";
     let typeMessge = messages["type"];
-    console.log('messages', typeMessge)
 
     if(typeMessge == "text"){
-        const time = GetTime(messages);
 
-        const horaApertura = new Date();
-        horaApertura.setHours(10, 0, 0); // Añadirle 1 hora mas del horario normal
+        text = (messages["text"])["body"];
 
-        const horaCierre  = new Date();
-        horaCierre .setHours(23, 0, 0); // Añadirle 1 hora mas del horario normal
-
-        const horaAperturaLocal = horaApertura.toLocaleTimeString('en-GB');
-        const horaCierreLocal = horaCierre.toLocaleTimeString('en-GB');
-
-        console.log('its closed', time < horaAperturaLocal || time >= horaCierreLocal)
-        console.log('time', time , horaAperturaLocal , horaCierreLocal)
-        if( time < horaAperturaLocal || time >= horaCierreLocal ) {
-           text = 'Out of service ' + time;
-        } else {
-           text = (messages["text"])["body"];
-        }
     }
     else if(typeMessge == "interactive"){
 
@@ -108,6 +86,7 @@ function GetTextUser(messages){
     else{
         myConsole.log("sin mensaje");
     }
+
     return text;
 }
 

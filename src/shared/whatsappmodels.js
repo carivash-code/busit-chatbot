@@ -1,37 +1,62 @@
 const cart = [];
 
-function MessageMainMenu(text, number){
+function MessageMainMenu(number){
     const data = JSON.stringify({
         "messaging_product": "whatsapp",
         "to": number,
         "type": "interactive",  
         "interactive": {
-            "type": "button",
+            "type": "list",
             "body": {
-                "text": text
+                "text": '*¿En qué podría ayudarte?*'
             },
             "action": {
-                "buttons": [
+                "button": "Ver Opciones",
+                "sections": [
                     {
-                        "type": "reply",
-                        "reply": {
-                            "id": "option-1",
-                            "title": "Servicios"
-                        }
-                    },
-                    {
-                        "type": "reply",
-                        "reply": {
-                            "id": "option-2",
-                            "title": "Sitio web"
-                        }
-                    },
-                    {
-                        "type": "reply",
-                        "reply": {
-                            "id": "option-3",
-                            "title": "Contacto directo"
-                        }
+                        "title": "Ver opciones",
+                        "rows": [
+                            {
+                                "id": "opt-1",
+                                "title": "¿Qué es un Chatbot?"
+                            },
+                            {
+                                "id": "opt-2",
+                                "title": "Casos de Uso"
+                            },
+                            {
+                                "id": "opt-3",
+                                "title": "Beneficios"
+                            },
+                            {
+                                "id": "opt-4",
+                                "title": "Herramientas"
+                            },
+                            {
+                                "id": "opt-5",
+                                "title": "Aprendizaje"
+                            },
+                            {
+                                "id": "opt-6",
+                                "title": "Seguridad "
+                            },
+                            {
+                                "id": "opt-7",
+                                "title": "Ejemplos Reales"
+                            },
+                            {
+                                "id": "opt-8",
+                                "title": "Demo Interactiva"
+                            },
+                            {
+                                "id": "opt-9",
+                                "title": "Precios"
+                            },
+                            {
+                                "id": "opt-10",
+                                "title": "Contacto"
+                            },
+                        ]
                     }
                 ]
             }
@@ -65,22 +90,22 @@ function MessageContact(number){
                         "city": "",
                         "state": "",
                         "zip": "",
-                        "country": "",
+                        "country": "México",
                         "country_code": "+52",
-                        "type": ""
+                        "type": "WORK"
                     }
                 ],
                 "birthday": "",
                 "emails": [
                     {
-                        "email": "info@busit.com",
-                        "type": ""
+                        "email": "",
+                        "type": "WORK"
                     }
                 ],
                 "name": {
                     "formatted_name": "Bus iT",
-                    "first_name": "",
-                    "last_name": "",
+                    "first_name": "Consultora",
+                    "last_name": "Bus-iT",
                     "middle_name": "",
                     "suffix": "",
                     "prefix": ""
@@ -94,13 +119,13 @@ function MessageContact(number){
                     {
                         "phone": "555555555",
                         "wa_id": "5255555555",
-                        "type": ""
+                        "type": "WORK"
                     }
                 ],
                 "urls": [
                     {
-                        "url": "https://www.busit.net",
-                        "type": ""
+                        "url": "",
+                        "type": "WORK"
                     }
                 ]
             }
@@ -112,9 +137,22 @@ function MessageContact(number){
 function MessageText(textResponse, number){
     const data = JSON.stringify({
         "messaging_product": "whatsapp",
-        "to": number,    
+        "to": number,
         "text": {
             "preview_url": true,
+            "body": textResponse
+        },
+        "type": "text"
+    });
+    return data;
+}
+
+function MessageTextWithUrl(textResponse, number){
+    const data = JSON.stringify({
+        "messaging_product": "whatsapp",
+        "to": number,
+        "text": {
+            "preview_url": false,
             "body": textResponse
         },
         "type": "text"
@@ -127,7 +165,7 @@ function GetMessageLocation(address, number){
     console.log('ADDRESS----', direccion);
 }
 
-function MessageValidation() {
+function MessageValidation(number) {
     const data = JSON.stringify({
         "messaging_product": "whatsapp",
         "to": number,
@@ -135,7 +173,7 @@ function MessageValidation() {
         "interactive": {
             "type": "button",
             "body": {
-                "text": "Confirmar dirección"
+                "text": "¿Te gustaría conocer más?"
             },
             "action": {
                 "buttons": [
@@ -143,14 +181,14 @@ function MessageValidation() {
                         "type": "reply",
                         "reply": {
                             "id": "option-yes",
-                            "title": "✅ Si, es correcta"
+                            "title": "Si"
                         }
                     },
                     {
                         "type": "reply",
                         "reply": {
                             "id": "option-cancel",
-                            "title": "⛔ No, deseo cambiarla"
+                            "title": "Deseo saber más..."
                         }
                     }
                 ]
@@ -678,5 +716,6 @@ MessageServiceMenu,
 MessageLocationConfirmation,
 MessagePizzaOneIngredientSecond,
 MessagePizzaOneIngredient2,
+MessageTextWithUrl,
 cart
 };
