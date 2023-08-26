@@ -3,6 +3,7 @@ const whatsappService = require('../services/whatsappService')
 
 async function Process(textUser, number) {
   textUser = textUser.toLowerCase()
+  const minTimeToRespose = 1000
 
   if (
     textUser.includes('hola') ||
@@ -20,9 +21,9 @@ async function Process(textUser, number) {
     const msgMainMenu = whatsappModel.MessageMainMenu(number)
 
     await whatsappService.SendMessageWhatsApp(msgGreeting)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgPrivacy)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMainMenu)
   } else if (textUser.includes('¿qué es un chatbot?')) {
     const msgInfo = whatsappModel.MessageText(
@@ -40,9 +41,9 @@ async function Process(textUser, number) {
     )
 
     await whatsappService.SendMessageWhatsApp(msgInfo)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMNoreInfo)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgUrlContact)
   } else if (textUser.includes('casos de uso')) {
     const msgInfo = whatsappModel.MessageText(
@@ -59,9 +60,9 @@ async function Process(textUser, number) {
     )
 
     await whatsappService.SendMessageWhatsApp(msgInfo)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMoreInfo)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgUrlContact)
 
   } else if (textUser.includes('beneficios')) {
@@ -79,9 +80,9 @@ async function Process(textUser, number) {
     )
 
     await whatsappService.SendMessageWhatsApp(msgInfo)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMNoreInfo)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgUrlContact)
   } else if (textUser.includes('herramientas')) {
     const msgInfo = whatsappModel.MessageText(
@@ -97,9 +98,9 @@ async function Process(textUser, number) {
     )
 
     await whatsappService.SendMessageWhatsApp(msgInfo)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMNoreInfo)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgUrlContact)
   } else if (textUser.includes('implementación')) {
     const msgInfo = whatsappModel.MessageText(
@@ -114,9 +115,9 @@ async function Process(textUser, number) {
     )
 
     await whatsappService.SendMessageWhatsApp(msgInfo)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMNoreInfo)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgUrlContact)
   } else if (textUser.includes('aprendizaje')) {
     const msgInfo = whatsappModel.MessageText(
@@ -131,9 +132,9 @@ async function Process(textUser, number) {
     )
 
     await whatsappService.SendMessageWhatsApp(msgInfo)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMNoreInfo)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgUrlContact)
   } else if (textUser.includes('seguridad')) {
     const msgInfo = whatsappModel.MessageText(
@@ -148,9 +149,9 @@ async function Process(textUser, number) {
     )
 
     await whatsappService.SendMessageWhatsApp(msgInfo)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMNoreInfo)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgUrlContact)
   } else if (textUser.includes('ejemplos reales')) {
     const msgInfo = whatsappModel.MessageText(
@@ -165,9 +166,9 @@ async function Process(textUser, number) {
     )
 
     await whatsappService.SendMessageWhatsApp(msgInfo)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMNoreInfo)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgUrlContact)
   } else if (textUser.includes('demo interactiva')) {
     const msgInfo = whatsappModel.MessageText(
@@ -182,9 +183,9 @@ async function Process(textUser, number) {
     )
 
     await whatsappService.SendMessageWhatsApp(msgInfo)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMNoreInfo)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgUrlContact)
   } else if (textUser.includes('precios')) {
     const msgInfo = whatsappModel.MessageText(
@@ -199,9 +200,9 @@ async function Process(textUser, number) {
     )
 
     await whatsappService.SendMessageWhatsApp(msgInfo)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMNoreInfo)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgUrlContact)
   } else if (textUser.includes('contacto')) {
     const msgInfo = whatsappModel.MessageText(
@@ -216,9 +217,9 @@ async function Process(textUser, number) {
     )
 
     await whatsappService.SendMessageWhatsApp(msgInfo)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMNoreInfo)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgUrlContact)
   } else {
     const msg = whatsappModel.MessageText(
@@ -228,7 +229,7 @@ async function Process(textUser, number) {
     const msgMainMenu = whatsappModel.MessageMainMenu(number)
 
     await whatsappService.SendMessageWhatsApp(msg)
-    await wait(500)
+    await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMainMenu)
   }
 }
