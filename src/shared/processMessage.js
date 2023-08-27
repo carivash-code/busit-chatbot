@@ -34,17 +34,19 @@ async function Process(textUser, number) {
       '¡Explora cómo nuestros chatbots pueden transformar tu negocio! Descubre más sobre sus capacidades y cómo pueden mejorar la interacción con tus clientes. ¡Contáctanos para conocer más!',
       number
     )
-
     const msgUrlContact = whatsappModel.MessageText(
       'https://www.busit.net/',
       number
     )
+    const msgMainMenu = whatsappModel.MessageMainNewMenu(number)
 
     await whatsappService.SendMessageWhatsApp(msgInfo)
     await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMNoreInfo)
     await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgUrlContact)
+    await wait(minTimeToRespose)
+    await whatsappService.SendMessageWhatsApp(msgMainMenu)
   } else if (textUser.includes('casos de uso')) {
     const msgInfo = whatsappModel.MessageText(
       'Sumérgete en el mundo de posibilidades. Desde brindar soporte instantáneo las 24 horas hasta captar clientes potenciales, los chatbots se adaptan a tu negocio como un aliado versátil y eficiente.',
@@ -58,13 +60,15 @@ async function Process(textUser, number) {
       'https://www.busit.net/contacto',
       number
     )
+    const msgMainMenu = whatsappModel.MessageMainNewMenu(number)
 
     await whatsappService.SendMessageWhatsApp(msgInfo)
     await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMoreInfo)
     await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgUrlContact)
-
+    await wait(minTimeToRespose)
+    await whatsappService.SendMessageWhatsApp(msgMainMenu)
   } else if (textUser.includes('beneficios')) {
     const msgInfo = whatsappModel.MessageText(
       '¿Imagina tener un equipo de atención al cliente que nunca duerme? Con nuestros chatbots, experimentarás beneficios impresionantes: respuestas rápidas, aumentos en la satisfacción del cliente y reducción de carga de trabajo.',
@@ -78,12 +82,15 @@ async function Process(textUser, number) {
       'https://www.busit.net/contacto',
       number
     )
+    const msgMainMenu = whatsappModel.MessageMainNewMenu(number)
 
     await whatsappService.SendMessageWhatsApp(msgInfo)
     await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMNoreInfo)
     await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgUrlContact)
+    await wait(minTimeToRespose)
+    await whatsappService.SendMessageWhatsApp(msgMainMenu)
   } else if (textUser.includes('herramientas')) {
     const msgInfo = whatsappModel.MessageText(
       'Te proporcionamos las herramientas líderes en el mercado para construir tu chatbot personalizado. Sin necesidad de ser un experto en programación, podrás crear un asistente virtual que represente tu marca a la perfección.',
@@ -96,12 +103,15 @@ async function Process(textUser, number) {
       'https://www.busit.net/contacto',
       number
     )
+    const msgMainMenu = whatsappModel.MessageMainNewMenu(number)
 
     await whatsappService.SendMessageWhatsApp(msgInfo)
     await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMNoreInfo)
     await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgUrlContact)
+    await wait(minTimeToRespose)
+    await whatsappService.SendMessageWhatsApp(msgMainMenu)
   } else if (textUser.includes('implementación')) {
     const msgInfo = whatsappModel.MessageText(
       'Nuestro equipo te guiará en cada paso. Desde la planificación hasta el lanzamiento, te asistiremos para que la implementación de tu chatbot sea exitosa, mejorando la interacción con tus clientes desde el primer día.',
@@ -113,12 +123,15 @@ async function Process(textUser, number) {
       'https://www.busit.net/contacto',
       number
     )
+    const msgMainMenu = whatsappModel.MessageMainNewMenu(number)
 
     await whatsappService.SendMessageWhatsApp(msgInfo)
     await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMNoreInfo)
     await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgUrlContact)
+    await wait(minTimeToRespose)
+    await whatsappService.SendMessageWhatsApp(msgMainMenu)
   } else if (textUser.includes('aprendizaje')) {
     const msgInfo = whatsappModel.MessageText(
       'Los chatbots no solo responden, ¡aprenden! Gracias al aprendizaje automático, se adaptan a las preferencias y necesidades cambiantes de tus usuarios, brindando respuestas cada vez más precisas.', 
@@ -130,12 +143,15 @@ async function Process(textUser, number) {
       'https://www.busit.net/contacto',
       number
     )
+    const msgMainMenu = whatsappModel.MessageMainNewMenu(number)
 
     await whatsappService.SendMessageWhatsApp(msgInfo)
     await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMNoreInfo)
     await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgUrlContact)
+    await wait(minTimeToRespose)
+    await whatsappService.SendMessageWhatsApp(msgMainMenu)
   } else if (textUser.includes('seguridad')) {
     const msgInfo = whatsappModel.MessageText(
       'La privacidad es primordial. Nuestros chatbots están diseñados con protocolos de seguridad avanzados para garantizar que los datos de tus clientes estén protegidos en todo momento.', 
@@ -147,12 +163,15 @@ async function Process(textUser, number) {
       'https://www.busit.net/contacto',
       number
     )
+    const msgMainMenu = whatsappModel.MessageMainNewMenu(number)
 
     await whatsappService.SendMessageWhatsApp(msgInfo)
     await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMNoreInfo)
     await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgUrlContact)
+    await wait(minTimeToRespose)
+    await whatsappService.SendMessageWhatsApp(msgMainMenu)   
   } else if (textUser.includes('ejemplos reales')) {
     const msgInfo = whatsappModel.MessageText(
       'Descubre cómo empresas líderes han transformado sus operaciones con nuestros chatbots. Desde agilizar el proceso de compra hasta ofrecer diagnósticos médicos preliminares, los ejemplos reales hablan por sí mismos.', 
@@ -164,12 +183,15 @@ async function Process(textUser, number) {
       'https://www.busit.net/contacto',
       number
     )
+    const msgMainMenu = whatsappModel.MessageMainNewMenu(number)
 
     await whatsappService.SendMessageWhatsApp(msgInfo)
     await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMNoreInfo)
     await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgUrlContact)
+    await wait(minTimeToRespose)
+    await whatsappService.SendMessageWhatsApp(msgMainMenu)
   } else if (textUser.includes('demo interactiva')) {
     const msgInfo = whatsappModel.MessageText(
       ' ¿Te gustaría verlo en acción? Experimenta una demostración interactiva y sorpréndete con cómo un chatbot puede responder a tus preguntas y necesidades en tiempo real.', 
@@ -181,12 +203,15 @@ async function Process(textUser, number) {
       'https://www.busit.net/contacto',
       number
     )
+    const msgMainMenu = whatsappModel.MessageMainNewMenu(number)
 
     await whatsappService.SendMessageWhatsApp(msgInfo)
     await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMNoreInfo)
     await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgUrlContact)
+    await wait(minTimeToRespose)
+    await whatsappService.SendMessageWhatsApp(msgMainMenu)
   } else if (textUser.includes('precios')) {
     const msgInfo = whatsappModel.MessageText(
       'Ofrecemos planes flexibles para todos los presupuestos. Desde soluciones básicas hasta personalizadas, encontrarás el plan perfecto para llevar la eficiencia de tu negocio al siguiente nivel.', 
@@ -198,12 +223,15 @@ async function Process(textUser, number) {
       'https://www.busit.net/contacto',
       number
     )
+    const msgMainMenu = whatsappModel.MessageMainNewMenu(number)
 
     await whatsappService.SendMessageWhatsApp(msgInfo)
     await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMNoreInfo)
     await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgUrlContact)
+    await wait(minTimeToRespose)
+    await whatsappService.SendMessageWhatsApp(msgMainMenu)
   } else if (textUser.includes('contacto')) {
     const msgInfo = whatsappModel.MessageText(
       '¿Dudas? ¡Estamos aquí para ayudarte! Contáctanos para un asesoramiento personalizado y descubre cómo nuestra tecnología puede elevar tu negocio hacia el éxito.', 
@@ -215,18 +243,21 @@ async function Process(textUser, number) {
       'https://www.busit.net/contacto',
       number
     )
+    const msgMainMenu = whatsappModel.MessageMainNewMenu(number)
 
     await whatsappService.SendMessageWhatsApp(msgInfo)
     await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgMNoreInfo)
     await wait(minTimeToRespose)
     await whatsappService.SendMessageWhatsApp(msgUrlContact)
+    await wait(minTimeToRespose)
+    await whatsappService.SendMessageWhatsApp(msgMainMenu)
   } else {
     const msg = whatsappModel.MessageText(
       '¡Hola! Parece que tu pregunta no coincide exactamente con las opciones que ofrecemos en el menú. Para brindarte la información más relevante, te invito a revisar las opciones del menú que tenemos. Si ninguna de las opciones del menú aborda tu pregunta, no dudes en escribirnos de nuevo con más detalles y estaremos encantados de ayudarte. 😊' ,
       number
     )
-    const msgMainMenu = whatsappModel.MessageMainMenu(number)
+    const msgMainMenu = whatsappModel.MessageMainNewMenu(number)
 
     await whatsappService.SendMessageWhatsApp(msg)
     await wait(minTimeToRespose)

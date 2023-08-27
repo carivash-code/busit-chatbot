@@ -65,6 +65,71 @@ function MessageMainMenu(number){
     return data;
 }
 
+function MessageMainNewMenu(number){
+    const data = JSON.stringify({
+        "messaging_product": "whatsapp",
+        "to": number,
+        "type": "interactive",  
+        "interactive": {
+            "type": "list",
+            "body": {
+                "text": '*¿Qué otro tema te gustaría ver?*'
+            },
+            "action": {
+                "button": "Ver Opciones",
+                "sections": [
+                    {
+                        "title": "Ver opciones",
+                        "rows": [
+                            {
+                                "id": "opt-1",
+                                "title": "¿Qué es un Chatbot?"
+                            },
+                            {
+                                "id": "opt-2",
+                                "title": "Casos de Uso"
+                            },
+                            {
+                                "id": "opt-3",
+                                "title": "Beneficios"
+                            },
+                            {
+                                "id": "opt-4",
+                                "title": "Herramientas"
+                            },
+                            {
+                                "id": "opt-5",
+                                "title": "Aprendizaje"
+                            },
+                            {
+                                "id": "opt-6",
+                                "title": "Seguridad "
+                            },
+                            {
+                                "id": "opt-7",
+                                "title": "Ejemplos Reales"
+                            },
+                            {
+                                "id": "opt-8",
+                                "title": "Demo Interactiva"
+                            },
+                            {
+                                "id": "opt-9",
+                                "title": "Precios"
+                            },
+                            {
+                                "id": "opt-10",
+                                "title": "Contacto"
+                            },
+                        ]
+                    }
+                ]
+            }
+        }     
+    });
+    return data;
+}
+
 function MessageImage(number) {
     const data = JSON.stringify({
         "messaging_product": "whatsapp",
@@ -717,5 +782,6 @@ MessageLocationConfirmation,
 MessagePizzaOneIngredientSecond,
 MessagePizzaOneIngredient2,
 MessageTextWithUrl,
+MessageMainNewMenu,
 cart
 };
