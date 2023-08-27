@@ -3,7 +3,7 @@ const whatsappService = require('../services/whatsappService')
 
 async function Process(textUser, number) {
   textUser = textUser.toLowerCase()
-  const minTimeToRespose = 1000
+  const minTimeToRespose = 1500
 
   if (
     textUser.includes('hola') ||
