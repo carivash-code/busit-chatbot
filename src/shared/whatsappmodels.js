@@ -73,7 +73,7 @@ function MessageMainNewMenu(number){
         "interactive": {
             "type": "list",
             "body": {
-                "text": '*¿Qué otro tema te gustaría ver?*'
+                "text": '*¿En qué más podría ayudarte?*'
             },
             "action": {
                 "button": "Ver Opciones",
