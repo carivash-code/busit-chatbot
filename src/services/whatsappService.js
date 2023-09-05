@@ -23,8 +23,8 @@ async function getDataAxios(options, data){
         )
     return req
     } catch(e) {
-        myConsole.log(e)
-        console.log('Error:', e)
+        myConsole.log(e.response.data.error.error_data.details)
+        console.log('Error in data:', e.response.data.error.error_data.details)
         return e
     }
 }

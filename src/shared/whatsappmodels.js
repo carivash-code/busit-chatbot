@@ -1,4 +1,6 @@
 const cart = [];
+const dataReservation = [];
+const userData = [];
 
 function MessageMainMenu(number){
     const data = JSON.stringify({
@@ -14,50 +16,76 @@ function MessageMainMenu(number){
                 "button": "Ver Opciones",
                 "sections": [
                     {
-                        "title": "Ver opciones",
+                        "title": "Acciones",
                         "rows": [
                             {
                                 "id": "opt-1",
-                                "title": "¿Qué es un Chatbot?"
+                                "title": "Hacer reservación"
                             },
                             {
                                 "id": "opt-2",
-                                "title": "Casos de Uso"
+                                "title": "Consulta reservación"
                             },
                             {
                                 "id": "opt-3",
-                                "title": "Beneficios"
+                                "title": "Llamar a recepción"
                             },
                             {
                                 "id": "opt-4",
-                                "title": "Herramientas"
-                            },
-                            {
-                                "id": "opt-5",
-                                "title": "Aprendizaje"
-                            },
-                            {
-                                "id": "opt-6",
-                                "title": "Seguridad "
-                            },
-                            {
-                                "id": "opt-7",
-                                "title": "Ejemplos Reales"
-                            },
-                            {
-                                "id": "opt-8",
-                                "title": "Demo Interactiva"
-                            },
-                            {
-                                "id": "opt-9",
-                                "title": "Precios"
-                            },
-                            {
-                                "id": "opt-10",
-                                "title": "Contacto"
+                                "title": "Servicio a la habitación"
                             },
                         ]
-                    }
+                    },
+                    {
+                        "title": "Ayuda",
+                        "rows": [
+                            {
+                                "id": "opt-1-1",
+                                "title": "Ayuda sobre:",
+                                "description": "¿Cómo hacer una reserva?"
+                            },
+                            {
+                                "id": "opt-1-2",
+                                "title": "Ayuda sobre:",
+                                "description": "¿Cómo consultar una reserva?"
+                            },
+                            {
+                                "id": "opt-1-3",
+                                "title": "Ayuda sobre:",
+                                "description": "¿Qué es check-in?"
+                            },
+                            {
+                                "id": "opt-1-4",
+                                "title": "Ayuda sobre:",
+                                "description": "¿Qué es check-out?"
+                            },
+                            {
+                                "id": "opt-1-5",
+                                "title": "Ayuda sobre:",
+                                "description": "¿Cómo hacer check-in?"
+                            },
+                            {
+                                "id": "opt-1-6",
+                                "title": "Ayuda sobre:",
+                                "description": "¿Cómo hacer check-out?"
+                            },
+                            // {
+                            //     "id": "opt-1-7",
+                            //     "title": "Información",
+                            //     "description": "Costos y métodos de pagos"
+                            // },
+                            // {
+                            //     "id": "opt-1-8",
+                            //     "title": "Información",
+                            //     "description": "Horarios"
+                            // },
+                            // {
+                            //     "id": "opt-1-9",
+                            //     "title": "Información",
+                            //     "description": "Información de habitación"
+                            // },
+                        ]
+                    },
                 ]
             }
         }     
@@ -79,48 +107,107 @@ function MessageMainNewMenu(number){
                 "button": "Ver Opciones",
                 "sections": [
                     {
-                        "title": "Ver opciones",
+                        "title": "Acciones",
                         "rows": [
                             {
                                 "id": "opt-1",
-                                "title": "¿Qué es un Chatbot?"
+                                "title": "Hacer reservación"
                             },
                             {
                                 "id": "opt-2",
-                                "title": "Casos de Uso"
+                                "title": "Consulta reservación"
                             },
                             {
                                 "id": "opt-3",
-                                "title": "Beneficios"
+                                "title": "Llamar a recepción"
                             },
                             {
                                 "id": "opt-4",
-                                "title": "Herramientas"
+                                "title": "Servicio a la habitación"
+                            },
+                        ]
+                    },
+                    {
+                        "title": "Ayuda",
+                        "rows": [
+                            {
+                                "id": "opt-1-1",
+                                "title": "Ayuda sobre:",
+                                "description": "¿Cómo hacer una reserva?"
                             },
                             {
-                                "id": "opt-5",
-                                "title": "Aprendizaje"
+                                "id": "opt-1-2",
+                                "title": "Ayuda sobre:",
+                                "description": "¿Cómo consultar una reserva?"
                             },
                             {
-                                "id": "opt-6",
-                                "title": "Seguridad "
+                                "id": "opt-1-3",
+                                "title": "Ayuda sobre:",
+                                "description": "¿Qué es check-in?"
                             },
                             {
-                                "id": "opt-7",
-                                "title": "Ejemplos Reales"
+                                "id": "opt-1-4",
+                                "title": "Ayuda sobre:",
+                                "description": "¿Qué es check-out?"
                             },
                             {
-                                "id": "opt-8",
-                                "title": "Demo Interactiva"
+                                "id": "opt-1-5",
+                                "title": "Ayuda sobre:",
+                                "description": "¿Cómo hacer check-in?"
                             },
                             {
-                                "id": "opt-9",
-                                "title": "Precios"
+                                "id": "opt-1-6",
+                                "title": "Ayuda sobre:",
+                                "description": "¿Cómo hacer check-out?"
+                            },
+                            // {
+                            //     "id": "opt-1-7",
+                            //     "title": "Información",
+                            //     "description": "Costos y métodos de pagos"
+                            // },
+                            // {
+                            //     "id": "opt-1-8",
+                            //     "title": "Información",
+                            //     "description": "Horarios"
+                            // },
+                            // {
+                            //     "id": "opt-1-9",
+                            //     "title": "Información",
+                            //     "description": "Información de habitación"
+                            // },
+                        ]
+                    },
+                ]
+            }
+        }     
+    });
+    return data;
+}
+
+function MessageReservationDaysCheckIn(number){
+    const data = JSON.stringify({
+        "messaging_product": "whatsapp",
+        "to": number,
+        "type": "interactive",  
+        "interactive": {
+            "type": "list",
+            "body": {
+                "text": '*Check-in*'
+            },
+            "action": {
+                "button": "Check-in",
+                "sections": [
+                    {
+                        "title": "Reservación",
+                        "rows": [
+                            {
+                                "id": "opt-2",
+                                "title": "Consulta de reservación"
                             },
                             {
-                                "id": "opt-10",
-                                "title": "Contacto"
-                            },
+                                "id": "opt-100",
+                                "title": "Otra fecha"
+                            }
                         ]
                     }
                 ]
@@ -210,6 +297,10 @@ function MessageText(textResponse, number){
         "type": "text"
     });
     return data;
+}
+
+function MessageReservationText(textResponse){
+    dataReservation.push(textResponse)
 }
 
 function MessageTextWithUrl(textResponse, number){
@@ -783,5 +874,8 @@ MessagePizzaOneIngredientSecond,
 MessagePizzaOneIngredient2,
 MessageTextWithUrl,
 MessageMainNewMenu,
-cart
+MessageReservationText,
+cart,
+dataReservation,
+userData
 };
