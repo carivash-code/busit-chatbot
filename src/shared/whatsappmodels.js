@@ -217,6 +217,96 @@ function MessageReservationDaysCheckIn(number){
     return data;
 }
 
+function MessageReservatioAdultsGuests(number){
+    const data = JSON.stringify({
+        "messaging_product": "whatsapp",
+        "to": number,
+        "type": "interactive",  
+        "interactive": {
+            "type": "list",
+            "body": {
+                "text": '*Huéspedes*'
+            },
+            "action": {
+                "button": "Huéspedes",
+                "sections": [
+                    {
+                        "title": "Adultos",
+                        "rows": [
+                            {
+                                "id": "opt-1",
+                                "title": "1"
+                            },
+                            {
+                                "id": "opt-2",
+                                "title": "2"
+                            },
+                            {
+                                "id": "opt-3",
+                                "title": "3"
+                            },
+                            {
+                                "id": "opt-4",
+                                "title": "4"
+                            },
+                            {
+                                "id": "opt-5",
+                                "title": "Más de 4"
+                            },
+                        ]
+                    }
+                ]
+            }
+        }     
+    });
+    return data;
+}
+
+function MessageReservatioChildGuests(number){
+    const data = JSON.stringify({
+        "messaging_product": "whatsapp",
+        "to": number,
+        "type": "interactive",  
+        "interactive": {
+            "type": "list",
+            "body": {
+                "text": '*Huéspedes*'
+            },
+            "action": {
+                "button": "Huéspedes",
+                "sections": [
+                    {
+                        "title": "Menores",
+                        "rows": [
+                            {
+                                "id": "opt-1",
+                                "title": "1"
+                            },
+                            {
+                                "id": "opt-2",
+                                "title": "2"
+                            },
+                            {
+                                "id": "opt-3",
+                                "title": "3"
+                            },
+                            {
+                                "id": "opt-4",
+                                "title": "4"
+                            },
+                            {
+                                "id": "opt-5",
+                                "title": "Más de 4"
+                            },
+                        ]
+                    }
+                ]
+            }
+        }     
+    });
+    return data;
+}
+
 function MessageImage(number) {
     const data = JSON.stringify({
         "messaging_product": "whatsapp",
@@ -301,6 +391,48 @@ function MessageText(textResponse, number){
 
 function MessageReservationText(textResponse){
     dataReservation.push(textResponse)
+}
+
+function MessageTemplate(number, checkIn, checkOut, name, email, roomGuests) {
+    const data = JSON.stringify({
+        "messaging_product": "whatsapp",
+        "to": number,
+        "type": "template",
+        "template": {
+            "name": "reservation",
+            "language": {
+                "code": "es_MX"
+            },
+            "components": [
+                {
+                    "type":"body",
+                    "parameters": [
+                        {
+                            "type": "text",
+                            "text": checkIn
+                        },
+                        {
+                            "type": "text",
+                            "text": checkOut
+                        },
+                        {
+                            "type": "text",
+                            "text": name
+                        },
+                        {
+                            "type": "text",
+                            "text": email
+                        },
+                        {
+                            "type": "text",
+                            "text": roomGuests
+                        },
+                    ]
+                }
+            ]
+        },
+    });
+    return data;
 }
 
 function MessageTextWithUrl(textResponse, number){
@@ -875,6 +1007,9 @@ MessagePizzaOneIngredient2,
 MessageTextWithUrl,
 MessageMainNewMenu,
 MessageReservationText,
+MessageTemplate,
+MessageReservatioAdultsGuests,
+MessageReservatioChildGuests,
 cart,
 dataReservation,
 userData
